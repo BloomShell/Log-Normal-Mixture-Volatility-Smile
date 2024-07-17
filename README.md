@@ -8,5 +8,5 @@ The LogNormalMixture model is used to fit market volatility smiles by modeling t
 
 ## Visualize the model implied-volatilities
 <p align="center">
-    <img src="https://i.imgur.com/nenSomS.png" width="900"/>
+    <img src="https://i.imgur.com/Vpwt0ru.png" width="900"/>
 </p>
