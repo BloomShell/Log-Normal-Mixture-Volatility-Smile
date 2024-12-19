@@ -23,7 +23,13 @@ To use a mixture model to price path-dependent products, one must specify the mi
 \end{align*}
 
 In the example provided, the probabilities (weights) of the volatility scenarios remain constant over time. The basic interpretation of defining the mixture model with the above static approach assumes the weights are fixed from time \( t_0 \) all the way to the final maturity \( T \). However, this uncertainty is *"resolved in the next millisecond"*, but the non-dynamic stochastic volatility model only specifies what is going to happen to those volatility scenarios at a fixed time in the future, and not what happens in between now (\( t_0 \)) and then (\( T \)). This static approach, where the value of the derivative in the mixture model is given by:
-
+$$
+\displaystyle
+\left( \sum_{k=1}^n a_k b_k \right)^2
+\leq
+\left( \sum_{k=1}^n a_k^2 \right)
+\left( \sum_{k=1}^n b_k^2 \right)
+$$
 \[
 V_{\text{MM}} = \sum_{i=1}^N p_i V(S_i),
 \]
