@@ -10,12 +10,12 @@ The LogNormalMixture model is used to fit market volatility smiles by modeling t
 </p>
 
 ## Mixtures of distributions
-Reading Piterbarg's paper *"Mixture of Models: A Simple Recipe for a ... Hangover?"* ([SSRN Link][1]). Starting from the idea of using a weighted average of derivative security prices computed using different “simple” models (the so-called “mixture of models”,
+Reading Piterbarg's paper *"Mixture of Models: A Simple Recipe for a ... Hangover?"*. Starting from the idea of using a weighted average of derivative security prices computed using different “simple” models (the so-called “mixture of models”,
 or “ensemble of models”, approach) as a simple way to add stochastic volatility to virtually any model. Perhaps, the mixture of normal distributions (i.e. a distribution with a density that is a weighted average of two or more Gaussian densities with different volatilities) has heavy tails. \\ \\
 To use a mixture model to price path-dependent products, one must specify the mixture model dynamics, particularly how probabilities (weights) of different volatility scenarios evolve over time. This is done in the lognormal mixture model (Brigo and Mercurio), where the risk-neutral density of the asset is a mixture of lognormal densities, and an analytical diffusion coefficient is specified. The square of the local volatility $\nu(t,y)$ is a weighted average of the squared basic volatilities $\sigma_1^2(t), \dots, \sigma_N^2(t)$, with weights as functions of the marginal lognormal densities:
-$$
+\[
 \nu^2(t, y) = \sum_{i=1}^N \Lambda_i(t, y) \sigma_i^2(t) = \frac{\sum_{i=1}^N \lambda_i \sigma_i^2 p_i(S)}{\sum_{i=1}^N \lambda_i p_i(S)}.
-$$
+]\
 In the example provided, the probabilities (weights) of the volatility scenarios remain constant over time. The basic interpretation of defining the mixture model with the above static approach is that assumes the weights are fixed from time $t_0$ all the way to the final maturity $T$. However, this uncertainty is *"resolved in the next millisecond"*, but the non-dynamic stochastic volatility model only specifies what is going to happen to those volatility scenarios at a fixed time in the future, and not what happens in between now ($t_0$) and then ($T$). This static approach, where the value of the derivative in the mixture model is given by:
 $$
 V_{\text{MM}} = \sum_{i=1}^N p_i V(S_i),
