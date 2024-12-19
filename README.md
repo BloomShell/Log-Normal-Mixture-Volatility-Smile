@@ -79,3 +79,8 @@ This inconsistency arises because the mixture model fails to account for the dyn
 
 - Brigo, D., Mercurio, F., & Rapisarda, F. (Year). *Lognormal-mixture dynamics and calibration to market volatility smiles.* Retrieved from [Imperial College](https://www.ma.imperial.ac.uk/~dbrigo/lognsmile.pdf)
 - Piterbarg, V. *Mixture of Models: A Simple Recipe for a ... Hangover?* ([SSRN](https://ssrn.com/abstract=393060))
+- 
+
+```math
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+```
